@@ -12,22 +12,23 @@
     <h1>Week 7</h1>
     <h2>Notes</h2>
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <h2>Questions</h2>
-    <ul>
-        <li>No questions for now.</li>
+        <li>In JavaScript, functions arefirst-class objects, which means they can be passed around in the same way as every other value. They can have their own properties and methods, as well as accepting other functions as parameters and being returned by other functions. This makes them a very flexible tool to work with in JavaScript, and there are a variety of techniques and patterns that can be used to make code cleaner.</li>
+        <li>The call() method can be used to set the value of this inside a function to an object that is provided as the first argument.</li>
+        <li>AnImmediately Invoked Function Expression– or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing parentheses at the end of the function definition (remember we use parentheses to invoke a function). </li>
+        <li>The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself. This is done by assigning an anonymous function to a variable that hasthe same name as the function.</li>
+        <li>Callbacks can be used to facilitate event-driven asynchronous programming. JavaScript is a single-threaded environment, which means only one piece of code will ever be processed at a time. </li>
+        <li>The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.</li>
+        <li>There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data.</li>
+        <li>Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
+        <li>At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule</li>
+        <li>A return value; otherwise there’s no point in the function (unless it has changed something else in the program – in which case, it’s broken the 'no side-effects' rule).</li>
+        <li>A function is said to be curried when not all arguments have been supplied to the function, so it returns another function that retains the arguments already provided, and expects the remaining arguments that were omitted when the original function was called. A final result is only returned once all the expected arguments have eventually been provided.</li>
+        <li>Currying relies on higher-order functions that are able to return partially applied functions. All curried functions are higher-order functions because they return a function, but not all higher-order functions are curried. </li>
+        <li>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. This enables data to be sent and received in the background, as well as portions of a page to be updated in response to user events, while the rest of the program continues to run.</li>
     </ul>
     <h2>Code Practice</h2>
     <ul>
-        <li><a href="https://codepen.io/galvezgm/pen/WNxxebm">Quiz Ninja! (Testing and Debugging)</a></li>
+        <li><a href="https://codepen.io/galvezgm/pen/JjKvoPM">Quiz Ninja! (AJAX Update)</a></li>
     </ul>
 </body>
 
