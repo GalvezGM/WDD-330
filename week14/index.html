@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="main.js"></script>
+    <title>Fitness Tracker</title>
+</head>
+
+<body>
+    <div id="header">
+        <h1 class="glow">Fitness Tracker</h1>
+    </div>
+    <div id="container">
+        <!--Left Box-->
+        <div id="left">
+            <div class="box">
+                <h2 class="box-header">BMI and Water Intake</h2>
+                <div class="box-content">
+                    <table class="left-table">
+                        <tr class="left-table-row">
+                            <td class="left-name">
+                                <p>Enter height (inches) and weight (pounds) to find BMI</p>
+                                Height: <input type="text" id="height" size="5"><br> Weight: <input type="text" id="weight" size="5"><br>
+                                <button type="button" onclick="displayBmi()">Compute BMI</button>
+                                <div id="output"></div>
+                                <div class="getExerciseTime">
+                                    Amount of time to exercise (minutes): <input type="text" id="exerciseTime" size="5"><br>
+                                </div>
+                                <button type="button" onclick="getExerciseTime()">Show Water Intake Needed</button>
+                                <div id="additionalOutput"></div>
+                                <h2>Saved Data:</h2>
+                                <p id="localStorage"></p>
+                                <button type="button" onclick="clearStorage()">Clear Local Storage</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="box">
+                <h2 class="box-header">Statistics</h2>
+                <div class="box-content">
+                    <table class="left-table">
+                        <tr class="left-table-row">
+                            <td class="left-name">Exercise Progress:</td>
+                            <td id="percentage-completed">0%</td>
+                        </tr>
+                        <tr class="left-table-row">
+                            <td class="left-name">Total Minutes Exercised:</td>
+                            <td id="total-exercised">0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--Right Box-->
+        <div id="right">
+            <div class="box">
+                <div class="box-header">
+                    <h2>Monday Routine</h2>
+                    <i class="edit-right fas "></i>
+                </div>
+                <div class="box-content">
+                    <ul class="right-list">
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-1" class="toggle-complete far fa-circle "></i>
+                                <h3>Arms</h3>
+                                <span>30 min (Morning)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Arm Circles</li>
+                                    <li>Tricep Dips</li>
+                                    <li>Bicep Curls</li>
+                                    <li>Plank Sidewalk</li>
+                                    <li>Kickboxing Punches</li>
+                                    <li>Rolling Pushups</li>
+                                    <li>Side Plank</li>
+                                    <li>Super Man</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-2" class="toggle-complete far fa-circle "></i>
+                                <h3>Chest</h3>
+                                <span>45 min (Afternoon)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Barbell Bench Press</li>
+                                    <li>Peck Deck</li>
+                                    <li>Cable Crossover</li>
+                                    <li>Chest Press</li>
+                                    <li>Inclined Dumbbell Flies</li>
+                                    <li>Dips</li>
+                                    <li>Push Ups</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h2>Tuesday Routine</h2>
+                    <i class="edit-right fas "></i>
+                </div>
+                <div class="box-content">
+                    <ul class="right-list">
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-3" class="toggle-complete far fa-circle "></i>
+                                <h3>Back</h3>
+                                <span>30 min (Morning)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Deadlift</li>
+                                    <li>Pull-Ups</li>
+                                    <li>Bennt Over Row</li>
+                                    <li>Chest Supported</li>
+                                    <li>Single-Arm Dumbbell Row</li>
+                                    <li>Inverted Row</li>
+                                    <li>Lat Pulldown</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-4" class="toggle-complete far fa-circle "></i>
+                                <h3>Abs</h3>
+                                <span>45 min (Afternoon)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Plank</li>
+                                    <li>Mountain Climber</li>
+                                    <li>Reverse Crunch</li>
+                                    <li>Dead Bug</li>
+                                    <li>Leg Raise</li>
+                                    <li>Abs roll-out</li>
+                                    <li>Bird-dog</li>
+                                    <li>Hanging Knee Rest</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h2>Wednesday Routine</h2>
+                    <i class="edit-right fas "></i>
+                </div>
+                <div class="box-content">
+                    <ul class="right-list">
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-5" class="toggle-complete far fa-circle "></i>
+                                <h3>Meditate</h3>
+                                <span>30 min</span>
+                            </div>
+                            <div class="right-description">
+                                Take time to relax and stretch to ease and rest muscles.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h2>Thursday Routine</h2>
+                    <i class="edit-right fas "></i>
+                </div>
+                <div class="box-content">
+                    <ul class="right-list">
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-6" class="toggle-complete far fa-circle "></i>
+                                <h3>Arms</h3>
+                                <span>30 min (Morning)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Arm Circles</li>
+                                    <li>Tricep Dips</li>
+                                    <li>Bicep Curls</li>
+                                    <li>Plank Sidewalk</li>
+                                    <li>Kickboxing Punches</li>
+                                    <li>Rolling Pushups</li>
+                                    <li>Side Plank</li>
+                                    <li>Super Man</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-7" class="toggle-complete far fa-circle "></i>
+                                <h3>Chest</h3>
+                                <span>45 min (Afternoon)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Barbell Bench Press</li>
+                                    <li>Peck Deck</li>
+                                    <li>Cable Crossover</li>
+                                    <li>Chest Press</li>
+                                    <li>Inclined Dumbbell Flies</li>
+                                    <li>Dips</li>
+                                    <li>Push Ups</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h2>Friday Routine</h2>
+                    <i class="edit-right fas "></i>
+                </div>
+                <div class="box-content">
+                    <ul class="right-list">
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-8" class="toggle-complete far fa-circle "></i>
+                                <h3>Back</h3>
+                                <span>30 min (Morning)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Deadlift</li>
+                                    <li>Pull-Ups</li>
+                                    <li>Bennt Over Row</li>
+                                    <li>Chest Supported</li>
+                                    <li>Single-Arm Dumbbell Row</li>
+                                    <li>Inverted Row</li>
+                                    <li>Lat Pulldown</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-9" class="toggle-complete far fa-circle "></i>
+                                <h3>Abs</h3>
+                                <span>45 min (Afternoon)</span>
+                            </div>
+                            <div class="right-description">
+                                <ul>
+                                    <li>Plank</li>
+                                    <li>Mountain Climber</li>
+                                    <li>Reverse Crunch</li>
+                                    <li>Dead Bug</li>
+                                    <li>Leg Raise</li>
+                                    <li>Abs roll-out</li>
+                                    <li>Bird-dog</li>
+                                    <li>Hanging Knee Rest</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h2>Saturday Routine</h2>
+                    <i class="edit-right fas "></i>
+                </div>
+                <div class="box-content">
+                    <ul class="right-list">
+                        <li>
+                            <div class="right-name">
+                                <i id="exercise-10" class="toggle-complete far fa-circle "></i>
+                                <h3>Legs</h3>
+                                <span>60 min</span>
+                            </div>
+                            <div class="right-description">
+                                <p>Stretching exercise before jogging. Sprint occasionally.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

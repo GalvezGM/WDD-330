@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+}
+
+.glow {
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    -moz-animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #12a15e, 0 0 40px #12a15e, 0 0 50px #12a15e, 0 0 60px #12a15e, 0 0 70px #12a15e;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #4beba0, 0 0 40px #4beba0, 0 0 50px #4beba0, 0 0 60px #4beba0, 0 0 70px #4beba0, 0 0 80px #4beba0;
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body {
+    margin: 0px;
+    background-color: #fcffce;
+}
+
+#header {
+    color: #ffffff;
+    background-color: #006b2d;
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.box {
+    overflow: hidden;
+    margin: 0px 0px 5px 0px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #a1b97d;
+}
+
+.box-header {
+    background-color: #006b2d;
+    color: #ffffff;
+    margin: 0px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-header h2 {
+    margin: 0;
+}
+
+.edit-right {
+    margin-left: 25px;
+    margin-right: 2px;
+}
+
+.box-content {
+    padding: 0px 10px 0px 10px;
+}
+
+#left {
+    margin-right: 5px;
+    flex: 1;
+}
+
+.left-table {
+    width: 100%;
+}
+
+.left-table-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 15px 0px;
+}
+
+.left-name {
+    text-decoration: none;
+}
+
+#output,
+#additionalOutput {
+    font-size: 20px;
+}
+
+#right {
+    margin-left: 15px;
+    flex: 1;
+}
+
+.right-name {
+    display: flex;
+}
+
+.right-list li {
+    margin-bottom: 15px;
+}
+
+.right-list h3 {
+    margin: -5px 20px;
+    text-decoration: none;
+}
